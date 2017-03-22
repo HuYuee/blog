@@ -60,7 +60,7 @@ ga_domain: huangxuan.me
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "keep moving!"
-sidebar-avatar: /img/avatar.JPG      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: img/avatar.JPG      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 # Featured Tags
