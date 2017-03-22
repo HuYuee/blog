@@ -24,17 +24,26 @@
                         </a>
                     </li>
                 <% } %>
-                <% if (config.zhihu_username) { %>
+                <% if (config.github_username) { %>
                     <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/<%= config.zhihu_username %>">
+                        <a target="_blank"  href="https://github.com/<%= config.github_username %>">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                             </span>
                         </a>
                     </li>
                 <% } %>
-
+                <% if (config.jianshu_username) { %>
+                    <li>
+                        <a target="_blank" href="http://www.jianshu.com/u/<%= config.jianshu_username %>">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">简</i>
+                            </span>
+                        </a>
+                    </li>
+                <% } %>
                 <% if (config.weibo_username) { %>
                     <li>
                         <a target="_blank" href="http://weibo.com/<%= config.weibo_username %>">
@@ -45,7 +54,16 @@
                         </a>
                     </li>
                 <% } %>
-
+                <% if (config.zhihu_username) { %>
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/<%= config.zhihu_username %>">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                <% } %>
                 <% if (config.facebook_username) { %>
                     <li>
                         <a target="_blank" href="https://www.facebook.com/<%= config.facebook_username %>">
@@ -57,16 +75,7 @@
                     </li>
                 <% } %>
 
-                <% if (config.github_username) { %>
-                    <li>
-                        <a target="_blank"  href="https://github.com/<%= config.github_username %>">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                <% } %>
+
 
                 <% if (config.linkedin_username) { %>
                     <li>
@@ -81,18 +90,19 @@
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; <%= config.title %> <%= new Date().getFullYear() %> 
+                    Copyright &copy; <%= config.title %> <%= new Date().getFullYear() %>
                     <br>
-                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    Theme by <a href="http://huangxuan.me">Hux</a>
                     <span style="display: inline-block; margin: 0 5px;">
                         <i class="fa fa-heart"></i>
-                    </span> 
-                    Ported by <a href="http://blog.kaijun.rocks">Kaijun</a> | 
-                    <iframe
+                    </span>
+                    Ported by <a href="https://huyuee.github.io/blog/">huyue</a> |
+                    <!-- 项目star和地址 -->
+                    <!-- <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="91px" height="20px"
                         src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
-                    </iframe>
+                    </iframe> -->
                 </p>
             </div>
         </div>
@@ -121,14 +131,14 @@
     }
 </script>
 
-<!-- 
-     Because of the native support for backtick-style fenced code blocks 
-     right within the Markdown is landed in Github Pages, 
-     From V1.6, There is no need for Highlight.js, 
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
      so Huxblog drops it officially.
 
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
 -->
 <!--
     <script>
@@ -215,7 +225,7 @@
             l = $('<li class="'+n+'_nav"></li>').append(c);
             $(selector).append(l);
         });
-        return true;    
+        return true;
     }
 
     generateCatalog(".catalog-body");
@@ -247,4 +257,3 @@
     });
 </script>
 <% } %>
-
