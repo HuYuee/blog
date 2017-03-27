@@ -13,11 +13,11 @@
 
     <title>
         
-          js原型对象2 - 古朋的博客 | huyue&#39;s Blog
+          github pages+阿里云域名绑定搭建个人博客 - 古朋的博客 | huyue&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://kaijun.rocks/hexo-theme-huxblog/2017/03/21/js原型对象2/">
+    <link rel="canonical" href="http://kaijun.rocks/hexo-theme-huxblog/2017/03/27/github页面连接域名/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -155,7 +155,7 @@
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        background-image: url('/img/home-bg.jpg')
+        background-image: url('post-bg-2015.jpg')
     }
 </style>
 <header class="intro-header" >
@@ -165,16 +165,14 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#前端开发" title="前端开发">前端开发</a>
-                        
-                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                          <a class="tag" href="/tags/#github" title="github">github</a>
                         
                     </div>
-                    <h1>js原型对象2</h1>
+                    <h1>github pages+阿里云域名绑定搭建个人博客</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by 古朋 on
-                        2017-03-21
+                        2017-03-27
                     </span>
                 </div>
             </div>
@@ -193,23 +191,17 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>在看下面的内容之前，建议先看我写的<a href="http://www.jianshu.com/p/541051e2ffda" target="_blank" rel="external">js原型对象（一)</a></p>
-<h2 id="更简单的原型语法"><a href="#更简单的原型语法" class="headerlink" title="更简单的原型语法"></a>更简单的原型语法</h2><p>在看了前面栗子之后，你们可能注意到了，每添加一个属性和方法就要敲一遍Person.prototype。为了使代码简洁美观，最常见的做法是用一个包含所有属性的方法的对象字面量来重写整个原型对象。</p>
-<p>来看个栗子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&#125;</div><div class="line">Person.prototype = &#123;</div><div class="line">  <span class="attr">name</span> : <span class="string">"Lee"</span>,</div><div class="line">  <span class="attr">age</span> : <span class="number">20</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>但是上面的这种更简单的写法有几个问题：</p>
-<p><strong>1.上面的写法本质上完全重写了默认的prototype对象，因此使得原型中的constructor属性不再指向Person了</strong>。这种情况的时候如果constructor属性很重要，可以像下面这样特意将他设置回适当的值</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&#125;</div><div class="line">Person.prototype = &#123;</div><div class="line">  <span class="attr">constructor</span> : Person,<span class="comment">//设置回适当的值</span></div><div class="line">  name : <span class="string">"Lee"</span>,</div><div class="line">  <span class="attr">age</span> : <span class="number">20</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>2.上面的写法在重写了默认的prototype对象，切断了现有原型与任何之前已经存在的对象实例之间的联系，他们引用的仍然是最初的原型</strong>。</p>
-<p>下面两个栗子来对比这个问题：</p>
-<p>1）没有重写原型对象的栗子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> lee = <span class="keyword">new</span> Person();</div><div class="line">Person.prototype.name = <span class="string">'Lee'</span>;</div><div class="line">alert(lee.name);<span class="comment">//'Lee'</span></div></pre></td></tr></table></figure>
-<p>2）重写原型对象的栗子</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> lee = <span class="keyword">new</span> Person();</div><div class="line">Person.prototype = &#123;</div><div class="line">  <span class="attr">constructor</span> : Person,<span class="comment">//设置回适当的值</span></div><div class="line">  name : <span class="string">"Lee"</span>,</div><div class="line">  <span class="attr">age</span> : <span class="number">20</span></div><div class="line">&#125;</div><div class="line">alert(lee.name);<span class="comment">//undefined</span></div></pre></td></tr></table></figure>
-<h2 id="原型对象的问题"><a href="#原型对象的问题" class="headerlink" title="原型对象的问题"></a>原型对象的问题</h2><p>原型中所有属性是被很多实例共享的，这种共享对于函数非常合适。对于那些包含基本值的属性也说得过去，毕竟（上面一篇文章中所示），通过在实例上添加一个同名属性，可以隐藏原型中的对应属性。然而，<strong>对于包含引用类型值的属性就有问题了</strong>。</p>
-<p>举个栗子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype = &#123;</div><div class="line">  <span class="attr">constructor</span> : Person,<span class="comment">//设置回适当的值</span></div><div class="line">  name : <span class="string">"Lee"</span>,</div><div class="line">  <span class="attr">age</span> : <span class="number">20</span>,</div><div class="line">  <span class="attr">friends</span> : [<span class="string">"Wang"</span>,<span class="string">"Tang"</span>]</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person();</div><div class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person();</div><div class="line"></div><div class="line">p1.friends.push(<span class="string">"Zhang"</span>);</div><div class="line"></div><div class="line">alert(p1.friends);<span class="comment">//"Wang,Tang,Zhang"</span></div><div class="line">alert(p2.friends);<span class="comment">//"Wang,Tang,Zhang"</span></div><div class="line">alert(p1.friends === p2.friends);<span class="comment">//true</span></div></pre></td></tr></table></figure>
-<p>在上面的例子中，Person.prototype对象有一个名为friends的属性，该属性包含一个字符串数组。这个属性就是包含引用类型值属性。因为该属性是保存的对这个数组的引用，相当于就是说所有的实例都是公用的同一个这个数组，只要一个人对这个数组进行了修改，其他实例就都会改变。</p>
+                <p>一直想整出一个个人博客出来玩玩，于是就查了些资料，发现在域名绑定个人博客这一块的资料比较杂，试了很多次才成功，所以写出篇文章供大家更方便的操作。</p>
+<h2 id="1-获取github-pages的ip地址"><a href="#1-获取github-pages的ip地址" class="headerlink" title="1.获取github pages的ip地址"></a>1.获取github pages的ip地址</h2><p>打开你的电脑的命令行工具，ping你的github地址，忽略“/”后面的路径，比如我的github pages地址是<a href="huyuee.github.io/blog">huyuee.github.io/blog</a>，那么我需要ping的地址就是huyuee.github.io，如下图：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/12147318/24323059/f0607102-11aa-11e7-88ac-7043065de086.png" alt="image"></p>
+<p>我得到了我的github pages的ip地址：151.101.100.133</p>
+<h2 id="2-配置阿里云域名解析"><a href="#2-配置阿里云域名解析" class="headerlink" title="2.配置阿里云域名解析"></a>2.配置阿里云域名解析</h2><p>进入你的阿里云的解析域名列表，选择你想要解析的域名，点击后面的解析。如下图所示：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/12147318/24323086/6dc683fc-11ab-11e7-854f-d0db969f43aa.png" alt="image"></p>
+<p>然后点击添加解析，因为我的ip地址是151.101.100.133，所以我添加了两条解析记录。如下图所示：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/12147318/24323066/01644df2-11ab-11e7-9f02-ca3a1544ded8.png" alt="image"></p>
+<h2 id="3-配置github-pages的custom-domain"><a href="#3-配置github-pages的custom-domain" class="headerlink" title="3.配置github pages的custom domain"></a>3.配置github pages的custom domain</h2><p>进入你的github pages的仓库，然后在设置里面将的你的域名的地址，添加到custom domain中，然后保存即可。如下图所示：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/12147318/24323070/084fb192-11ab-11e7-8300-39e790b17cdf.png" alt="image"></p>
+<p>设置到这个地方，你现在访问你的域名地址，比如我的是www.huyuee.com。就能看到你的github pages了！</p>
 
 
                 <hr>
@@ -218,13 +210,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2017/03/27/github页面连接域名/" data-toggle="tooltip" data-placement="top" title="github pages+阿里云域名绑定搭建个人博客">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2017/03/20/js原型对象1/" data-toggle="tooltip" data-placement="top" title="js原型对象1">Next Post &rarr;</a>
+                            <a href="/2017/03/21/js原型对象2/" data-toggle="tooltip" data-placement="top" title="js原型对象2">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -251,9 +239,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#前端开发" title="前端开发">前端开发</a>
-                        
-                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                          <a class="tag" href="/tags/#github" title="github">github</a>
                         
                     </div>
                 </section>
