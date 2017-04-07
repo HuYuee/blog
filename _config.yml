@@ -149,4 +149,4 @@ theme: huxblog
 deploy:
   type: git
   repo: https://github.com/HuYuee/blog
-  branch: master
+  branch: gh-pages
