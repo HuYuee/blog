@@ -31,6 +31,25 @@
 
 
 
+## React
+
+
+
+### React高阶组件的深入
+
+- [深入理解 React 高阶组件](https://zhuanlan.zhihu.com/p/24776678)
+- [React进阶——使用高阶组件（Higher-order Components）优化你的代码](https://segmentfault.com/a/1190000004598113)
+- [React 高阶组件浅析](https://segmentfault.com/a/1190000010845410)
+- [深入理解 React 高阶组件](http://www.jianshu.com/p/0aae7d4d9bc1)
+
+
+
+### React老版本mixin研究
+- [React Mixin 的前世今生](https://www.w3ctech.com/topic/1599)
+- [React Mixin 的使用](https://segmentfault.com/a/1190000003016446)
+
+
+
 
 ## 浏览器原理相关文章
 
