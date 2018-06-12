@@ -1,0 +1,128 @@
+# 头部导航 Header
+menu:
+  首页: /
+  归档: /archives
+  关于: /about
+rss: /atom.xml
+
+# footer底部显示联系邮箱（在博客配置文件下添加email配置也是一样的效果）
+email: 'youemail@outlook.com'
+
+# 内容 Content
+excerpt_link: 继续阅读全文 »
+fancybox: true
+
+# 启用social widgets时有效
+# 社交widget文本字体，不填写则不显示title
+social_title: Follow me
+# Social links 社交链接
+social:
+  github: https://github.com/giscafer
+  weibo: http://weibo.com/laohoubin
+  zhihu: http://www.zhihu.com/people/giscafer
+  email: 'youemail@outlook.com'
+
+# WeChat 微信公众号二维码url
+wechat_url: http://blog.giscafer.com/static/images/qrcode_giscafer.jpg ## 启用wechat widget才会生效
+
+
+# Friendly links 友情链接
+links:
+  giscafer's blog: http://blog.giscafer.com
+  GIS520社区: http://www.gis520.com
+
+# 侧边栏 Sidebar，目前仅支持right
+sidebar: right
+# 目录展示位置，有两种选择，post为文章内部右侧；widget为sidebar形式展示，在markdown文件中通过toc:false可以指定某文章不展示目录
+content_position: widget
+# true目录将会浮动固定位置，false则相反，当且仅当content_position=widget时该设置值有效
+content_display_fixed: true
+
+# 文章底部推荐文章数,false关闭
+random_posts: 4
+
+widgets:
+- social
+- post_content
+- category
+- tagcloud
+- recent_posts
+- archive
+- friendly_link
+- wechat
+
+# 提供以下内置组件
+# - post_content      # 文章目录
+# - category          # 归类
+# - tag               # 标签
+# - tagcloud          # 云标签
+# - archives          # 归档
+# - recent_posts      # 最新文章
+# - lastest_comments  # 最新评论
+# - hot_comment_posts # 热评文章
+# - friendly_link     # 友情链接
+# - wechat            # 微信公众号
+
+
+# display widgets at the bottom of index pages (pagination == 2)
+index_widgets:
+# - category
+# - tagcloud
+# - archive
+
+# widget behavior
+archive_type: 'monthly'
+# 分类是否显示文章数量
+show_count: true
+
+# 标签云TagClound
+# 如果启动，则标签云颜色为随机
+tagcloud_color: false
+
+# MathJax Support
+# 设置enable属性为true即可开启mathjax
+# per_page如果为true表示所有文章都设置支持mathjax，如果为false，则在需要支持mathjax的文章加上mathjax: true
+mathjax:
+  enable: true
+  per_page: false
+  cdn: https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+
+
+# 其他参数
+google_analytics:
+favicon: /favicon.png
+
+
+# comments 评论插件
+# 关闭统一为 false
+
+## 网易云跟帖
+### 使用说明 http://cafe.giscafer.com/2017/04/14/gentie-test/
+gentie_productKey: e2fb4051c49842688ce669e634bc983f
+
+## 畅言 (不使用请将appid和appkey都设空或者false)
+### 使用说明：http://changyan.kuaizhan.com/static/help/
+changyan_appid: false  ##appid
+changyan_appkey: false  ##appkey
+## 友言
+### 使用说明
+### 填写友言用户ID http://www.uyan.cc/sites
+youyan_uid: false
+
+# gitment
+## 教程：https://imsun.net/posts/gitment-introduction/ 网站上进行查看
+gitment:
+  enable: false #如果不使用则设置false关闭
+  owner: giscafer # 你的github名称或者id id的获取方式为https://api.github.com/users/forvoid（你的名称）中的id极为github id
+  repo: giscafer.github.io # 你的留言存放的位置 我的是放在我的github的github page上面
+  client_id: 7e5dd6cdb9xxaxa4cf91a # Register a new OAuth application https://github.com/settings/applications/new 
+  client_secret: 97f37d5c27c4a511xx4fxx623d391c85cb97f8 
+
+## disqus
+disqus_shortname: false
+
+google_plus:
+fb_admins:
+fb_app_id:
+

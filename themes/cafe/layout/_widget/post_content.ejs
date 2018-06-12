@@ -1,0 +1,14 @@
+<% if (!index && theme.content_position==='widget' && toc(postObj.content || 'giscafer') &&  postObj.toc!==false){ %>
+    <div class="widget-wrap">
+    <% if (theme.content_position==='widget' && theme.content_display_fixed===true){ %>
+      <div class="widget" id="toc-widget-fixed">
+      <% } else { %>
+        <div class="widget" id="toc-widget">
+      <% } %>
+        <strong class="toc-title"><%= __('post_content') %></strong>
+        <div class="toc-widget-list">
+              <%- toc(postObj.content || 'giscafer') %>
+          </div>
+      </div>
+    </div>
+<% } %>
